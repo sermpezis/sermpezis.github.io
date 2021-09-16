@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Put name of student and diploma title here-->
+    <title>AI4NetMon</title>
+    <link rel='icon' href='favicon.ico' type='image/x-icon' sizes="16x16" />
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- load google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <!-- load font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- load custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Start of Header Section -->
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" id="mainNavBar">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="images/datalab_logo.png" alt="datalab logo" height="50"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <ul class="navbar-nav text-center">
+                <li class="nav-item">
+                  <a class="nav-link" href="#title">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#publications">Publications</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#presentations">Presentations</a>
+                </li> -->
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#blogs">Blogs</a>
+                </li> -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#code">Code</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#people">People</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div id="title" class="container text-center py-5 px-5">
+            <!-- put the diploma title below -->
+            <h1>AI4NetMon</h1>
+            <h3>Artificial intelligence (AI) methods and tools for improving network monitoring practices</h3>
+        </div>
+        <div class="jumbotron container px-5">
+            <p><em>The Internet monitoring infrastructure provided publicly by RIPE NCC, RouteViews, and other organizations, is invaluable for network operators, who use it to monitor their Internet routes, detect routing events that affect their traffic, troubleshoot their networks, discover the topology and design their policies, etc.</em></p>
+            <p><em>However, it is well known that the current infrastructure is not uniformly deployed, and this may limit some measurement efforts (e.g., regions with poor coverage) or lead to biased findings (e.g,. over/under-estimate impact of a route event depending on location).</em></p>
+            <p><em>The goal of the AI4NetMon project is to study and develop tools for improving the Internet monitoring infrastructure and practices, by addressing two key questions:
+                 <ul>
+                  <li>where to deploy new infrastructure?</li>
+                  <li>how to unbias the measurement from existing infrastructure?</li>
+                </ul> 
+            </em></p>
+        </div>
+    </header>
+    <!-- End of Header Section -->
+    <!-- Start of Main Section -->
+    <main class="container px-5">
+        <!-- Start of Overview Section -->
+        <section id="overview" class="pt-5">
+            <h2 class="text-center">Overview</h2>
+            <hr />
+            <div id="overview-intro">
+                <div class="row">
+                    <div class="col">
+                        <p>To answer the research questions AI4NetMon will be based on a data-driven approach, leveraging on <i>rich heterogeneous network data</i> and <i>state-of-the-art ML/AI methods</i>.</p>
+                        <p>The project will develop a set of open-source tools, aimed to be used by Internet operators, researchers, and practitioners (without requiring expertise in ML/AI). The AI4NetMon tools will receive as input the available network data and provide as output answers to the key questions (e.g., potential locations for new monitor deployments, monitoring selection strategies, unbiased estimates for a set of measurements).</p>
+                        <p>Specifically the project objectives are to:</p>
+
+                        <b>Identify the key use cases for monitoring infrastructure</b>
+                        <p>Which are the best locations to deploy monitors? What is the best set of probes to conduct measurements from? ...There is not a single answer to these questions! The best measurement strategy depends on what one wants to measure; e.g., a best set of monitors for <i>detecting</i> an outage, may be different than the best set of monitors for <i>estimating</i> an anycast catchment. Since a global answer does not exist, we need to provide answers <i>per case</i>. AI4NetMon will identify the use cases of higher importance to network operators, and for which the monitoring infrastructure is more frequently used.</p>
+
+                        <b>Quantify the bias and efficiency of the existing infrastructure and potential for improvement</b>
+                        <p>What is the accuracy, coverage, and bias of the existing monitoring infrastructure (for a certain use case)? What would be the best achievable performance? Is there a margin for improvement? How much? Building upon preliminary findings (<a href="https://arxiv.org/abs/2105.02346">paper</a>), AI4NetMon aims to answer these questions through theory, measurements, and experiments.</p>
+
+                        <b>Develop open-source tools for efficient Internet monitoring</b>
+                        <p>AI4NetMon will develop AI methods and tools to (i) identify the best locations (e.g., ASes, IXPs, geographical regions) to deploy new infrastructure, (ii) select set of vantage points from the existing infrastructure for lightweight and efficient measurements (e.g., subset of Atlas probes or route collectors), and (iii) unbias estimations from existing measurements. The AI4NetMon tools will collect data from various heterogeneous data sources and aggregate them in a common dataframe, which will feed state-of-the-art AI that will provide recommendations, predictions, inferences, etc., for the desired monitoring objectives.</p>
+                    </div>
+                </div>
+        <!-- End of Overview Section -->
+        <!-- Start of Publications Section -->
+        <section id="publications" class="pt-5">
+            <h2 class="text-center">Publications</h2>
+            <hr />
+            <!-- Start of Publication -->
+            <div class="row">
+                <div class="col-1">
+                    <h5>[C1]</h5>
+                </div>
+                <div class="col-11">
+                    <p>Pavlos Sermpezis, Vasileios Kotronis, Konstantinos Arakadakis, Athena Vakali
+                        <strong>"Estimating the Impact of BGP Prefix Hijacking"</strong>, 
+                        in <u>IFIP Networking conference</u>, 2021.
+                        <br /><a href="https://arxiv.org/abs/2105.02346" target="_blank">[<i class="far fa-file-pdf"></i> PDF]</a> 
+                        <a href="https://github.com/sermpezis/bgp-estimation/blob/main/misc/Sermpezis_presentation_IFIP_Networking_2021.pdf" target="_blank">[ <i class="far fa-file-powerpoint"></i> Presentation ]</a> 
+                        <a href="https://github.com/sermpezis/bgp-estimation" target="_blank">[ <i class="fab fa-github"></i> Code ]</a></p>
+                </div>
+            </div>
+            <!-- End of Publication -->
+        </section>
+        <!-- End of Publications Section -->
+        <!-- Start of Code Section -->
+        <section id="code" class="pt-5">
+            <h2>Code</h2>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <p>AI4NetMon <a href="https://github.com/kastanakis/CABaRet/tree/master/CABaRetExperimentalTestbed" target="_blank">[ <i class="fab fa-github"></i> github repo  ]</a></p>
+                </div>
+            </div>
+        </section>
+        <!-- End of Code Section -->
+        <!-- Start of People Section -->
+        <section id="people" class="pt-5">
+            <h2 class="text-center">People</h2>
+            <hr />
+            <div class="row">
+                <div class="col-md-4 py-4 py-md-0">
+                    <div class="card">
+                      <img src="images/sermpezis.png" class="card-img-top img-people" alt="Pavlos Sermpezis">
+                      <div class="card-body">
+                        <p class="card-text text-center"><strong>Pavlos Sermpezis</strong><br />Aristotle University of Thessaloniki, Greece</p>
+                        <img src="images/datalab_logo.png" class="card-img-top text-center img-logo-bottom" alt="datalab logo">
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-4 py-4 py-md-0">
+                    <div class="card">
+                      <img src="images/cgeorgitsis.jpeg" class="card-img-top img-people" alt="Christos Georgitsis">
+                      <div class="card-body">
+                        <p class="card-text text-center"><strong>Christos Georgitsis</strong><br />Aristotle University of Thessaloniki, Greece</p>
+                        <img src="images/datalab_logo.png" class="card-img-top text-center img-logo-bottom" alt="datalab logo">
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-4 py-4 py-md-0">
+                    <div class="card">
+                      <img src="images/vakali.png" class="card-img-top img-people" alt="Athena Vakali">
+                      <div class="card-body">
+                        <p class="card-text text-center"><strong>Athena Vakali</strong><br />Aristotle University of Thessaloniki, Greece</p>
+                        <img src="images/datalab_logo.png" class="card-img-top text-center img-logo-bottom" alt="datalab logo">
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of People Section -->
+        <!-- Start of Funding/Acknowledgements Section -->
+        <section id="acknowledgements" class="pt-5 mt-5">
+            <h2 class="text-center">Funding/Acknowledgements</h2>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <p class="text-center"><em>AI4NetMon is funded by <a href="https://www.ripe.net/">RIPE NCC</a>, through the <a href="https://www.ripe.net/participate/ripe/raci/raci-project-funding">RACI project funding 2021</a> program.</em></p>
+                </div>
+            </div>
+            <div class="row pt-2">
+                <div class="col">
+                    <img src="images/RIPE_NCC_Logo2015.png" class="img-funding" alt="RIPE NCC">
+                </div>
+            </div>
+        </section>
+        <!-- End of Funding/Acknowledgements Section -->
+    </main>
+    <!-- End of Main Section -->
+    <!-- Start of Footer Section -->
+    <footer>
+        <div class="container-fluid">
+            <div class="row container mx-auto pb-5">
+                <div class="col">
+                    <img src="images/datalab_logo_white.png" alt="datalab logo">
+                    <img src="images/auth_logo_white.png" alt="auth logo">
+                    <img src="images/logo_informatics.png" alt="auth informatics logo">
+                </div>
+            </div>
+            <div class="row pb-5">
+                <div class="col-md-4 py-3 py-md-0 mx-auto text-center">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Department of Informatics<br />Aristotle University of Thessaloniki<br />Thessaloniki GR-54124</p>
+                    <p><i class="fas fa-phone-alt"></i> +30-2310-998415</p>
+                    <p><i class="fas fa-envelope"></i> datalab@csd.auth.gr</p>
+                </div>
+                <div class="col-md-4 py-3 py-md-0 mx-auto text-center">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#title">About</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                        <!-- <li><a href="#presentations">Presentations</a></li> -->
+                        <!-- <li><a href="#blogs">Blogs</a></li> -->
+                        <li><a href="#code">Code</a></li>
+                        <li><a href="#people">People</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 py-3 py-md-0 mx-auto text-center">
+                    <a href="https://datalab.csd.auth.gr/"><h4><i class="fas fa-reply"></i> Back to Datalab<br />Website</h4></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="text-center">Copyright &copy; 2021 Dept. of Informatics AUTH. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer Section -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
