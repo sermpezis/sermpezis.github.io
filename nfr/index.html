@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Put name of student and diploma title here-->
+    <title>Diplomas template</title>
+    <link rel='icon' href='favicon.ico' type='image/x-icon' sizes="16x16" />
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- load google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <!-- load font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- load custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Start of Header Section -->
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" id="mainNavBar">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="images/datalab_logo.png" alt="datalab logo" height="50"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <ul class="navbar-nav text-center">
+                <li class="nav-item">
+                  <a class="nav-link" href="#title">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#publications">Publications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#presentations">Presentations</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#blogs">Blogs</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#code">Code</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#people">People</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div id="title" class="container text-center py-5 px-5">
+            <!-- put the diploma title below -->
+            <h1>NFR: Network-Friendly Recommendations</h1>
+            <!-- <h3>Subheading here if needed</h3> -->
+        </div>
+        <div class="jumbotron container px-5">
+            <p><em>Network-friendly recommendations (NFR) is a new paradigm that aims to increase the efficiency of content delivery by the joint design of network and recommendation system mechanisms. NFR leverage the recommendation systems that are an integral part of popular content/video services (e.g., YouTube, Netflix, Spotify) to recommend to the user content that can be efficiently delivered (e.g., stored at an edge cache).</em></p>
+            <p><em>In our works we study fundamental, theoretical and practical aspects of NFR. Specifically, we (i) introduce the concept of NFR and define system setups where it can be applied, (ii) propose models that capture simultaneously the network, the recommender system, and the user characteristics, (iii) develop theoretical results and design optimal policies for content delivery and recommendations, (iv) characterize the performance of NFR approaches in real content services (YouTube) and with experiments with real users.  requires new models joint design.</em></p>
+        </div>
+    </header>
+    <!-- End of Header Section -->
+    <!-- Start of Main Section -->
+    <main class="container px-5">
+        <!-- Start of Overview Section -->
+        <section id="overview" class="pt-5">
+            <h2 class="text-center">Overview</h2>
+            <hr />
+            <div id="overview-intro">
+                <div class="row">
+                    <div class="col">
+                        <p>The NFR paradigm is based on the key observations: (i) content/video services dominate the traffic and are crucial for the user satisfaction, (ii) recommendation systems are an integral part of popular applications, e.g., YouTube, Netflix, Spotify, and heavily influence the data demand, (iii) network operators and content providers increasingly collaborate for better content delivery.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>Jointly controlling recommendations and network resources, will enable to recommend contents that can be delivered in high QoS (e.g., locally cached contents; see Figure 1 for an example), and allocate network resources based on future recommendations/requests. This can lead to “win-win-win” situations for the content delivery systems (lower costs), the users (better experience), and content providers (higher revenues).</p>
+                    </div>
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="images/fig_1.png" alt="image 1">
+                            <figcaption class="figure-caption text-center">Figure 1</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>Figure 2 depicts an example of nudging recommendations in an implicit way towards network-friendly contents in a real system: a content that can be delivered in high-QoS and/or with low cost by the network can be added in the recommendation list (replace a low-QoS content) or be promoted by appearing in the top ranked recommendations (reorder).</p>
+                    </div>
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="images/fig_2.png" alt="image 2">
+                            <figcaption class="figure-caption text-center">Figure 2</figcaption>
+                        </figure>
+                   </div>
+                </div>
+            </div>
+            <div id="theoretical" class="pt-3">
+                <h3>Theoretical Contributions</h3>
+                <div class="row">
+                   <div class="col">
+                        <p>We model the involved setups, formulate optimization problems and design algorithms for:</p>
+                        <ul>
+                            <li>Recommendation-aware network policy design (i.e., design the caching policy, given the recommendation policy) [J1] [C1] [C2]</li>
+                            <li>Network-aware recommendation policy design (i.e., design the recommendation policy, given the content delivery policy) [C3] [C4] [C5]</li>
+                            <li>Joint network and recommendation policies design [C6]</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="experimental" class="pt-3">
+                <h3>Experimental Contributions</h3>
+                <div class="row">
+                    <div class="col-md-8">
+                        <ul>
+                            <li>We design methods and systems and apply them in real content services (YouTube) to measure the performance of NFR in practice [J2] [C4] [C7];</li>
+                            <li>and conduct experiments with real users to evaluate their perception of the NFR approach [J2] [C7] (see Figure 3) </li>
+                        </ul>
+                   </div>
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="images/fig_3.png" alt="image 3">
+                            <figcaption class="figure-caption text-center">Figure 3: experimental setup for NFR</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div id="keyResults" class="pt-3">
+                <h3>Key Results</h3>
+                <p><strong>Mobile edge caching efficiency increases by 10x!</strong></p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <figure class="figure">
+                            <img src="images/fig_4.png" class="figure-img img-fluid" alt="image 4">
+                            <figcaption class="figure-caption">
+                                <ul>
+                                    <li>Significant increase in CHR (up to 1 order of magnitude) [red vs black bars]</li>
+                                    <li>Need to design policy explicitly for similarity caching [green vs black bars]</li>
+                                    <li>Extra gains by allowing  access to multiple caches [black vs grey bars]</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-6">
+                        <figure class="figure">
+                            <img src="images/fig_5.png" class="figure-img img-fluid" alt="image 5">
+                            <figcaption class="figure-caption">
+                                <p>Simulation results can be achieved in practice as well (YouTube video service); our NFR algorithm CABaRet [black/grey bars] achieves 8x-10x higher caching efficiency than the vanilla popularity based caching [white bars]</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <p><strong>Users are willing to follow NFR!</strong></p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <figure class="figure">
+                            <img src="images/fig_6.png" class="figure-img img-fluid" alt="image 6">
+                            <figcaption class="figure-caption">
+                                <p>Use experience (QoE) as a function on interest in the content (x-axis) and QoS of the delivered content (y-axis). All quantities in scale 1-5; model fitted by dataset collected from experiments with real users [C7]</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-6">
+                        <figure class="figure">
+                            <img src="images/fig_7.png" class="figure-img img-fluid" alt="image 7">
+                            <figcaption class="figure-caption">
+                                <p>Fraction of times they select a NFR (y-axis) vs. the fraction of NFR presented to them at a list of 5 recommendations (x-axis). Users are willing to follow recommendations (the experimental line [yellow] is well above the random choice [blue]). </p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>      
+        </section>
+        <!-- End of Overview Section -->
+        <!-- Start of Publications Section -->
+        <section id="publications" class="pt-5">
+            <h2 class="text-center">Publications</h2>
+            <hr />
+            <!-- Start of Publication -->
+            <div class="row">
+                <div class="col-1">
+                    <h5>[J1]</h5>
+                </div>
+                <div class="col-11">
+                    <p>Pavlos Sermpezis, Theodoros Giannakas, Thrasyvoulos Spyropoulos, Luigi Vigneri, 
+                        <strong>"Soft Cache Hits: Improving Performance through Recommendation and Delivery of Related Content"</strong>, 
+                        in <u>IEEE Journal on Selected Areas in Communications (JSAC)</u>, vol.36, no.6, pp. 1300-1313, June 2018.
+                        <br />[ Journal ] <a href="https://ieeexplore.ieee.org/document/8374917/" target="_blank">[ <i class="far fa-file-pdf"></i> PDF ]</a></p>
+                </div>
+            </div>
+            <!-- End of Publication -->
+            <!-- Start of Publication -->
+            <div class="row">
+                <div class="col-1">
+                    <h5>[J2]</h5>
+                </div>
+                <div class="col-11">
+                    <p>Savvas Kastanakis, Pavlos Sermpezis, Vasileios Kotronis, Daniel Menasché, Thrasyvoulos Spyropoulos, 
+                        <strong>"Network-aware Recommendations in the Wild: Methodology, Realistic Evaluations, Experiments"</strong>, 
+                        in <u>IEEE Transactions on Mobile Computing (TMC)</u>, accepted for publication, November 2020.
+                        <br />[ Journal ] <a href="https://arxiv.org/pdf/2010.03183.pdf" target="_blank">[ <i class="far fa-file-pdf"></i> PDF ]</a> 
+                        <a href="https://github.com/kastanakis/CABaRet/tree/master/CABaRetExperimentalTestbed" target="_blank">[ <i class="fab fa-github"></i> Code ]</a></p>
+                </div>
+            </div>
+            <!-- End of Publication -->
+            <!-- Start of Publication -->
+            <div class="row">
+                <div class="col-1">
+                    <h5>[C1]</h5>
+                </div>
+                <div class="col-11">
+                    <p>Thrasyvoulos Spyropoulos, Pavlos Sermpezis, 
+                        <strong>"Soft Cache Hits and the Impact of Alternative Content Recommendations on Mobile Edge Caching"</strong>, 
+                        in <u>ACM Mobicom (CHANTS workshop)</u>, October 2016.
+                        <br />[ Conference ] <a href="https://arxiv.org/abs/1609.09682" target="_blank">[ <i class="far fa-file-pdf"></i> PDF ]</a></p>
+                </div>
+            </div>
+            <!-- End of Publication -->
+            <!-- Start of Publication -->
+            <div class="row">
+                <div class="col-1">
+                    <h5>[C2]</h5>
+                </div>
+                <div class="col-11">
+                    <p>Pavlos Sermpezis, Thrasyvoulos Spyropoulos, Luigi Vigneri, Theodoros Giannakas, 
+                        <strong>"Femto-Caching with Soft Cache Hits: Improving Performance with Related Content Recommendation"</strong>, 
+                        in <u>IEEE GLOBECOM</u>, December 2017.
+                        <br />[ Conference ] <a href="https://ieeexplore.ieee.org/document/8254035" target="_blank">[ <i class="far fa-file-pdf"></i> PDF ]</a></p>
+                </div>
+            </div>
+            <!-- End of Publication -->
+            <!-- Start of Publication -->
+            <div class="row">
+                <div class="col-1">
+                    <h5>[C3]</h5>
+                </div>
+                <div class="col-11">
+                    <p>Theodoros Giannakas, Pavlos Sermpezis, Thrasyvoulos Spyropoulos, 
+                        <strong>"Show me the Cache: Optimizing Cache-Friendly Recommendations for Sequential Content Access"</strong>, 
+                        in <u>IEEE WoWMoM</u>, June 2018.
+                        <br />[ Conference ] <a href="https://arxiv.org/pdf/2010.03183.pdf" target="_blank">[ <i class="far fa-file-pdf"></i> PDF ]</a></p>
+                </div>
+            </div>
+            <!-- End of Publication -->
+            <!-- Start of Publication -->
+            <div class="row">
+                <div class="col-1">
+                    <h5>[C4]</h5>
+                </div>
+                <div class="col-11">
+                    <p>Savvas Kastanakis, Pavlos Sermpezis, Vasileios Kotronis, Xenofontas Dimitropoulos, 
+                        <strong>"CABaRet: Leveraging Recommendation Systems for Mobile Edge Caching"</strong>, 
+                        in <u>ACM MECOMM (SIGCOMM workshops)</u>, August 2018.
+                        <br />[ Conference ] <a href="https://arxiv.org/abs/1806.02704" target="_blank">[ <i class="far fa-file-pdf"></i> PDF ]</a> 
+                        <a href="https://conferences.sigcomm.org/sigcomm/2018/files/slides/mecomm/paper_1.4.pdf" target="_blank">[ <i class="far fa-file-powerpoint"></i> Presentation ]</a></p>
+                </div>
+            </div>
+            <!-- End of Publication -->
+            <!-- Start of Publication -->
+            <div class="row">
+                <div class="col-1">
+                    <h5>[C5]</h5>
+                </div>
+                <div class="col-11">
+                    <p>Theodoros Giannakas, Thrasyvoulos Spyropoulos, Pavlos Sermpezis, 
+                        <strong>"The Order of Things: Position-Aware Network-friendly Recommendations in Long Viewing Sessions"</strong>, 
+                        in <u>IEEE/IFIP WiOpt</u>, June 2019.
+                        <br />[ Conference ] <a href="https://arxiv.org/abs/1905.04947" target="_blank">[ <i class="far fa-file-pdf"></i> PDF ]</a></p>
+                </div>
+            </div>
+            <!-- End of Publication -->
+            <!-- Start of Publication -->
+            <div class="row">
+                <div class="col-1">
+                    <h5>[C6]</h5>
+                </div>
+                <div class="col-11">
+                    <p>Marina Costantini, Thrasyvoulos Spyropoulos, Theodoros Giannakas, Pavlos Sermpezis, 
+                        <strong>"Approximation Guarantees for the Joint Optimization of Caching and Recommendation"</strong>, 
+                        in <u>IEEE ICC</u>, June 2020.
+                        <br />[ Conference ] <a href="https://ieeexplore.ieee.org/abstract/document/9148740" target="_blank">[ <i class="far fa-file-pdf"></i> PDF ]</a></p>
+                </div>
+            </div>
+            <!-- End of Publication -->
+            <!-- Start of Publication -->
+            <div class="row">
+                <div class="col-1">
+                    <h5>[C7]</h5>
+                </div>
+                <div class="col-11">
+                    <p>Pavlos Sermpezis, Savvas Kastanakis, João Ismael Pinheiro, Felipe Assis, Daniel Menasché, Thrasyvoulos Spyropoulos, 
+                        <strong>"Towards QoS-Aware Recommendations"</strong>, 
+                        in <u>ACM RecSys workshops (CARS workshop)</u>, September 2020.
+                        <br />[ Conference ] <a href="https://arxiv.org/pdf/1907.06392.pdf" target="_blank">[<i class="far fa-file-pdf"></i> PDF]</a> 
+                        <a href="https://drive.google.com/file/d/1Uuj8VIPC-ukg1MTtzDZNs4o_Ndh5jq_6/view" target="_blank">[ <i class="far fa-file-powerpoint"></i> Presentation ]</a> 
+                        <a href="https://github.com/kastanakis/CABaRet/tree/master/CABaRetExperimentalTestbed" target="_blank">[ <i class="fab fa-github"></i> Code ]</a></p>
+                </div>
+            </div>
+            <!-- End of Publication -->
+        </section>
+        <!-- End of Publications Section -->
+        <!-- Start of Presentations Section -->
+        <section id="presentations" class="pt-5">
+            <h2 class="text-center">Presentations / Videos</h2>
+            <hr />
+            <!-- Start of Presentation -->
+            <div class="row pb-3">
+                <div class="col-2">
+                    <!-- image thumbnail -->
+                    <img src="images/thumb_1.png" alt="thumbnail 1">
+                </div>
+                <div class="col-10">
+                    <p><strong>"Towards QoS-Aware Recommendations"</strong>
+                        <br />Savvas kastanakis
+                        <br />ACM RecSys workshops (CARS workshop) <a href="https://cars-workshop.com/" target="_blank">[ <i class="fas fa-link"></i> Link ]</a>
+                        <br />September 2020
+                        <br /><a href="https://drive.google.com/file/d/1Uuj8VIPC-ukg1MTtzDZNs4o_Ndh5jq_6/view" target="_blank">[ <i class="far fa-file-powerpoint"></i> Slides ]</a></p>
+                </div>
+            </div>
+            <!-- End of Presentation -->
+            <!-- Start of Presentation -->
+            <div class="row pb-3">
+                <div class="col-2">
+                    <!-- image thumbnail -->
+                    <img src="images/thumb_2.png" alt="thumbnail 2">
+                </div>
+                <div class="col-10">
+                    <p><strong>"CABaRet: Leveraging Recommendation Systems for Mobile Edge Caching"</strong>
+                        <br />Pavlos Sermpezis
+                        <br />ACM MECOMM (SIGCOMM workshops) <a href="https://conferences.sigcomm.org/sigcomm/2018/workshop-mecomm.html" target="_blank">[ <i class="fas fa-link"></i> Link ]</a>
+                        <br />August 2018
+                        <br /><a href="https://conferences.sigcomm.org/sigcomm/2018/files/slides/mecomm/paper_1.4.pdf">[ <i class="far fa-file-powerpoint"></i> Slides ]</a></p>
+                </div>
+            </div>
+            <!-- End of Presentation -->
+        </section>
+        <!-- End of Presentations Section -->
+        <!-- Start of Blogs Section -->
+       <!--  <section id="blogs" class="pt-5">
+            <h2 class="text-center">Blogs</h2>
+            <hr />
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, possimus nihil. Assumenda dolorem totam fuga ipsa cum fugiat laudantium amet corrupti consectetur sit blanditiis esse quod qui molestias nulla reprehenderit eius sunt mollitia, natus recusandae eligendi. Porro, architecto recusandae labore facere explicabo hic dolorum reiciendis sunt, ea nemo, iure at?</p>
+                </div>
+                <div class="col-md-6">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex autem eveniet odit! In, ullam? Similique assumenda quaerat id consectetur eaque adipisci soluta ratione dolorem, fugiat et. Fuga itaque corporis fugiat amet voluptatibus tempore possimus facere, nemo saepe? Cum, quisquam qui? Numquam natus possimus dolores reprehenderit facere veritatis eveniet laudantium est.</p>
+                </div>
+            </div>
+        </section> -->
+        <!-- End of Blogs Section -->
+        <!-- Start of Code Section -->
+        <section id="code" class="pt-5">
+            <h2 class="text-center">Code</h2>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <p>CABaRet [C4] [J2] Experimental Testbed and Dataset <a href="https://github.com/kastanakis/CABaRet/tree/master/CABaRetExperimentalTestbed" target="_blank">[ <i class="fab fa-github"></i> Github Link ]</a></p>
+                </div>
+            </div>
+            <!-- <h3>Datasets</h3>
+            <div class="row">
+                <div class="col">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius cupiditate esse nesciunt saepe porro et repellendus repudiandae, ab sapiente. Rem numquam voluptatem nostrum perspiciatis necessitatibus illum, sed dolores soluta dicta adipisci nemo, impedit consequuntur fuga! Eveniet iste incidunt est omnis, nesciunt at repellat consequatur! Architecto reprehenderit ullam excepturi consequatur omnis.</p>
+                </div>
+            </div> -->
+        </section>
+        <!-- End of Code Section -->
+        <!-- Start of People Section -->
+        <section id="people" class="pt-5">
+            <h2 class="text-center">People</h2>
+            <hr />
+            <div class="row">
+                <div class="col-md-4 py-4 py-md-0">
+                    <div class="card">
+                      <img src="images/sermpezis.png" class="card-img-top img-people" alt="Pavlos Sermpezis">
+                      <div class="card-body">
+                        <p class="card-text text-center"><strong>Pavlos Sermpezis</strong><br />Aristotle University of Thessaloniki, Greece</p>
+                        <img src="images/datalab_logo.png" class="card-img-top text-center img-logo-bottom" alt="datalab logo">
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-4 py-4 py-md-0">
+                    <div class="card">
+                      <img src="images/athena-vakali.png" class="card-img-top img-people" alt="Athena Vakali">
+                      <div class="card-body">
+                        <p class="card-text text-center"><strong>Athena Vakali</strong><br />Aristotle University of Thessaloniki, Greece</p>
+                        <img src="images/datalab_logo.png" class="card-img-top text-center img-logo-bottom" alt="datalab logo">
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-4 py-4 py-md-0">
+                    <div class="card">
+                      <img src="images/daniel.png" class="card-img-top img-people" alt="Daniel Sadoc Menasche">
+                      <div class="card-body">
+                        <p class="card-text text-center"><strong>Daniel Sadoc Menasché</strong><br />UFRJ, Rio de Janeiro, Brazil</p>
+                        <img src="images/ufrj.png" class="card-img-top text-center img-logo-bottom" alt="ufrj logo">
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-4 py-4 py-md-0">
+                    <div class="card">
+                      <img src="images/spyropou.png" class="card-img-top img-people" alt="Thrasyvoulos Spyropoulos">
+                      <div class="card-body">
+                        <p class="card-text text-center"><strong>Thrasyvoulos Spyropoulos</strong><br />EURECOM, Sophia-Antipolis, France</p>
+                        <img src="images/eurecom_logo.png" class="card-img-top text-center img-logo-bottom" alt="eurecom logo">
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-4 py-4 py-md-0">
+                    <div class="card">
+                      <img src="images/giannakas-theodoros.png" class="card-img-top img-people" alt="Theodoros Giannakas">
+                      <div class="card-body">
+                        <p class="card-text text-center"><strong>Theodoros Giannakas</strong><br />EURECOM, Sophia-Antipolis, France</p>
+                        <img src="images/eurecom_logo.png" class="card-img-top text-center img-logo-bottom" alt="eurecom logo">
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of People Section -->
+        <!-- Start of Funding/Acknowledgements Section -->
+        <section id="acknowledgements" class="pt-5 mt-5">
+            <h2 class="text-center">Funding/Acknowledgements</h2>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <p class="text-center"><em>This research is co-financed by Greece and the EuropeanUnion (European Social Fund- ESF) through the OperationalProgramme “Human Resources Development, Education and Lifelong Learning” in the context of the project “Reinforcement of Postdoctoral Researchers - 2nd Cycle” (MIS-5033021), implemented by the State Scholarships Foundation (IKY).</em></p>
+                </div>
+            </div>
+            <div class="row pt-2">
+                <div class="col">
+                    <img src="images/nsrf_2014_2020.png" class="img-funding" alt="NSRF 2014-2020">
+                </div>
+            </div>
+        </section>
+        <!-- End of Funding/Acknowledgements Section -->
+    </main>
+    <!-- End of Main Section -->
+    <!-- Start of Footer Section -->
+    <footer>
+        <div class="container-fluid">
+            <div class="row container mx-auto pb-5">
+                <div class="col">
+                    <img src="images/datalab_logo_white.png" alt="datalab logo">
+                    <img src="images/auth_logo_white.png" alt="auth logo">
+                    <img src="images/logo_informatics.png" alt="auth informatics logo">
+                </div>
+            </div>
+            <div class="row pb-5">
+                <div class="col-md-4 py-3 py-md-0 mx-auto text-center">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Department of Informatics<br />Aristotle University of Thessaloniki<br />Thessaloniki GR-54124</p>
+                    <p><i class="fas fa-phone-alt"></i> +30-2310-998415</p>
+                    <p><i class="fas fa-envelope"></i> datalab@csd.auth.gr</p>
+                </div>
+                <div class="col-md-4 py-3 py-md-0 mx-auto text-center">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#title">About</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                        <li><a href="#presentations">Presentations</a></li>
+                        <li><a href="#blogs">Blogs</a></li>
+                        <li><a href="#code">Code</a></li>
+                        <li><a href="#people">People</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="col-md-4 py-3 py-md-0 mx-auto text-center">
+                    <a href="https://datalab-new.csd.auth.gr/"><h4><i class="fas fa-reply"></i> Back to Datalab<br />Website</h4></a>
+                </div> -->
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="text-center">Copyright &copy; 2021 Dept. of Informatics AUTH. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer Section -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
