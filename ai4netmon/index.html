@@ -40,6 +40,19 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#title">About</a>
                 </li>
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Results
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/ai4netmon/results/result1.html">Result 1</a></li>
+                        <li><a class="dropdown-item" href="/ai4netmon/results/result2.html">Result 2</a></li>
+                        <li><a class="dropdown-item" href="/ai4netmon/results/result3.html">Result 3</a></li>
+                    </ul>
+                </li> -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#articles">Articles/Blogs</a>
+                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#publications">Publications</a>
                 </li>
@@ -71,7 +84,7 @@
             <p><em>The Internet monitoring infrastructure provided publicly by RIPE NCC, RouteViews, and other organizations, is invaluable for network operators, who use it to monitor their Internet routes, detect routing events that affect their traffic, troubleshoot their networks, discover the topology and design their policies, etc.</em></p>
             <p><em>However, it is well known that the current infrastructure is not uniformly deployed, and this may limit some measurement efforts (e.g., regions with poor coverage) or lead to biased findings (e.g,. over/under-estimate impact of a route event depending on location).</em></p>
             <p><em>The goal of the AI4NetMon project is to study limitations and biases, and develop tools and strategies for improving the Internet monitoring infrastructure and practices, by addressing two key questions:
-                 <ul>
+                 <ul style="list-style: disc;">
                   <li>where to deploy new infrastructure?</li>
                   <li>how to unbias the measurement from existing infrastructure?</li>
                 </ul> 
@@ -113,14 +126,166 @@
                         <b>Develop open-source tools for efficient Internet monitoring</b>
                         <p>AI4NetMon will develop AI methods and tools to (i) identify the best locations (e.g., ASes, IXPs, geographical regions) to deploy new infrastructure, (ii) select set of vantage points from the existing infrastructure for lightweight and efficient measurements (e.g., subset of Atlas probes or route collectors), and (iii) unbias estimations from existing measurements. The AI4NetMon tools will collect data from various heterogeneous data sources and aggregate them in a common dataframe, which will feed state-of-the-art AI that will provide recommendations, predictions, inferences, etc., for the desired monitoring objectives.</p>
                     </div>
+                    <h2 class="text-center">Project results</h2>
+                    <div class="row pb-5">
+                        <div class="col-md-8">
+                            <h3 class="pt-3">Bias: Quantification, Metrics, Results</h3>
+                            <p>We quantify the bias in the Internet measurement/monitoring infrastructure and platforms. We first define the bias and the metrics to quantify it. Then we compare the bias in the different Internet measurement infrastructures (e.g., RIPE Atlas, RIPE RIS, RouteViews) and present results that visualize this bias. The answers to the following questions
+                                <ul style="list-style: disc;">
+                                    <li>How biased is the infrastructure? (e.g., from a scale from 0 to 1, where 0 is no bias)</li>
+                                    <li>Is RIPE RIS more biased than RIPE Atlas? If yes, how much? What about RouteViews?</li>
+                                    <li>Is the infrastructure more biased in terms of location or network sizes?</li>
+                                </ul>   
+                                can be found in the <a href="https://github.com/sermpezis/ai4netmon/blob/main/docs/Bias_in_IMPs.md">detailed page about the bias in the Interent monitoring infrastructure</a> and in our <a href="https://labs.ripe.net/author/pavlos_sermpezis/bias-in-internet-measurement-infrastructure/">RIPE Labs article</a>.
+                            </p>    
+                        </div>
+                        <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="images/fig_radar_RIPE.png" alt="image 1">
+                            <figcaption class="figure-caption text-center">Radar plot depicting the bias of the RIPE Atlas and RIPE RIS infrastructures along different dimensions (network size, topology, location, etc.)</figcaption>
+                        </figure>
+                        </div>
+                    </div>
+                    <div class="row pb-5">
+                        <div class="col-md-12">
+                            <h3 class="pt-3">Recommendations for deployments of extra RIPE RIS and RIPE Atlas vantage points</h3>
+                            <p>We aim to find new potential locations for RIPE RIS monitors (i.e., ASes to peer with RIPE RIS). When adding an AS to the RIPE RIS monitors, then (i) the bias of the RIPE RIS changes (can increase or decrease), and (ii) there is some "improvement score" in terms of proximity to origin ASes, i.e., the total distance in AS hops to origin ASes decreases).
+                            <p>The following plot shows what is the trade-off by adding an AS to RIPE RIS: bias difference by adding this AS to RIPE RIS (x-axis; the smaller the better) vs. the ``improvement score'' it adds to RIPE RIS (y-axis; the larger the better).</p>
+                            <p> For detailed description and results see our <a href="https://observablehq.com/@pavlos/ai4netmon-ripe-ris-extension">online tool</a>. </p>
+                        </br>
+                        </div>
+                        <div class="col-md-12">
+                            <iframe width="100%" height="483" frameborder="0" src="https://observablehq.com/embed/@pavlos/extra-ripe-ris-bias-vs-improvement-detailed?cells=chart1"></iframe>
+                        </div>
+                    </br>
+                        <div class="col-md-12">
+                            <b>Top-5 recommendations for extra RIPE RIS peers and RIPE Atlas probes</b> 
+                            <p>A quick view for 5 recommendations for extending the RIPE RIS and Atlas infrastructures with vantage points in ASes that could decrease the bias. For more data, details, and options see the online tools for <a href="https://observablehq.com/@pavlos/ai4netmon-ripe-ris-extension">RIPE RIS </a> and <a href="https://observablehq.com/@pavlos/ai4netmon-ripe-atlas-extension">RIPE Atlas </a>
+                        </br>
+                        </div>
+                        <div class="col-md-6 text-center">
+                        	Top-5 recommendations for <b>RIPE RIS</b>
+                        	<iframe width="100%" height="212" frameborder="0"  src="https://observablehq.com/embed/@pavlos/ai4netmon-ripe-ris-extension?cells=viewof+short_table"></iframe>
+                        </div>
+                        <div class="col-md-6 text-center">
+                        	Top-5 recommendations for <b>RIPE Atlas</b>
+                        	<iframe width="100%" height="212" frameborder="0"  src="https://observablehq.com/embed/@pavlos/ai4netmon-ripe-atlas-extension?cells=viewof+short_table"></iframe>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col-md-12">
+                            <b>RIPE RIS peers and RIPE Atlas probes similarities</b> 
+                            <p>We calculate the similarities between each pair of RIPE RIS peers or RIPE Atlas probes. The similarity score can be used for selecting a set of non-similar peers/probes to increase diversity and reduce bias. <u>Preliminary</u> results and visualizations can be found in this <a href="https://observablehq.com/@pavlos/ai4netmon-tsne-monitor-similarity-ris">observable post</a>. </p>
+                        </br>
+                        </div>
+                    </div> -->
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="pt-3">Subsampling from Internet measurement platforms to decrease measurement bias</h3>
+                            <p> One can select subsets ("subsampling") of the vantage points of the Internet Measurement Platforms (IMPs), such as, RIPE Atlas, RIPE RIS, or RouteViews, in order to decrease their bias and get significantly more representative measurement data. In this <a href="https://github.com/sermpezis/ai4netmon/blob/main/docs/Subsampling_IMPs.md">documentation</a>, we provide (i) detailed results for the bias of subsampling in IMPs, and (ii) a method for efficient subsampling. </p>
+                        </br>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="pt-3">The AI4NetMon API</h3>
+                            <p> We provide an open API, which provides the bias scores for different IMPs of custom sets of vantage points. The API can be accessed at <a href="https://ai4netmon.csd.auth.gr/api/">https://ai4netmon.csd.auth.gr/api/</a>, and at its endpoints are described in this <a href="https://github.com/sermpezis/ai4netmon/blob/main/docs/AI4NetMon_API.md">documentation</a>. </p>
+                        </br>
+                        </div>
+                    </div>
                 </div>
         <!-- End of Overview Section -->
+        <!-- Start of Articles Section -->
+        <section id="articles" class="pt-5">
+            <h2 class="text-center">Articles / Blog posts / Presentations</h2>
+            <hr />
+            <!-- Start of Artic;e -->
+            <div class="row">
+                <div class="col">
+                    <ul style="list-style: disc;">
+                        <li>
+                            <p>Pavlos Sermpezis <strong>"Bias in Internet Measurement Platforms" [Blog/Tool/Data]</strong>, 
+                            in <u>Observable blog post</u>, 27 October 2022. <a href="https://observablehq.com/@pavlos/ai4netmon-bias" target="_blank">[<i class="fas fa-link"></i> Link]</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Pavlos Sermpezis <strong>"Bias in RIPE RIS per Route Collector" [Blog/Tool/Data]</strong>, 
+                            in <u>Observable blog post</u>, 27 October 2022. <a href="https://observablehq.com/@pavlos/ai4netmon-bias-per-route-collector" target="_blank">[<i class="fas fa-link"></i> Link]</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Pavlos Sermpezis <strong>"Extending RIPE Atlas in an unbiased way" [Blog/Tool/Data]</strong>, 
+                            in <u>Observable blog post</u>, 17 August 2022. <a href="https://observablehq.com/@pavlos/ai4netmon-ripe-atlas-extension" target="_blank">[<i class="fas fa-link"></i> Link]</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Pavlos Sermpezis <strong>"Extending RIPE RIS in an unbiased way" [Blog/Tool/Data]</strong>, 
+                            in <u>Observable blog post</u>, 29 June 2022. <a href="https://observablehq.com/@pavlos/ai4netmon-ripe-ris-extension" target="_blank">[<i class="fas fa-link"></i> Link]</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Pavlos Sermpezis & Alun Davies <strong>"Revealing Bias in Internet Measurements" [Podcast]</strong>, 
+                            in <u>RIPE Labs</u>, 29 Jun 2022. <a href="https://labs.ripe.net/author/alun_davies/revealing-bias-in-internet-measurements/" target="_blank">[<i class="fas fa-link"></i> Link]</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Pavlos Sermpezis <strong>"Bias in Internet Measurement Infrastructure" [Presenation]</strong>, 
+                            in <u>RIPE84</u>, 17 May 2022. <a href="https://ripe84.ripe.net/archives/video/768/" target="_blank">[<i class="fas fa-link"></i> Link]</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Pavlos Sermpezis <strong>"Bias in Internet Measurement Infrastructure"</strong>, 
+                            in <u>RIPE Labs</u>, 28 March 2022. <a href="https://labs.ripe.net/author/pavlos_sermpezis/bias-in-internet-measurement-infrastructure/" target="_blank">[<i class="fas fa-link"></i> Link]</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Pavlos Sermpezis <strong>"Potential deployments of extra RIPE RIS monitors: Bias vs. Improvement"</strong>, 
+                            in <u>Observable blog post</u>, 14 February 2022. <a href="https://observablehq.com/@pavlos/extra-ripe-ris-bias-vs-improvement" target="_blank">[<i class="fas fa-link"></i> Link]</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Pavlos Sermpezis <strong>"Estimating the Impact of a Hijack: Measurement Bias and How to Avoid It" [Presenation]</strong>, 
+                            in <u>RIPE83 (Routing WG)</u>, 22 November 2021. <a href="https://ripe83.ripe.net/archives/video/646/" target="_blank">[<i class="fas fa-link"></i> Link]</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Gergana Petrova <strong>"RACI Funding in 2021 - Planning and Projects"</strong>, 
+                            in <u>RIPE Labs</u>, 17 November 2021. <a href="https://labs.ripe.net/author/gergana_petrova/raci-funding-in-2021-planning-and-projects/" target="_blank">[<i class="fas fa-link"></i> Link]</a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End of Publication -->
+        </section>
+        <!-- End of Publications Section -->
         <!-- Start of Publications Section -->
         <section id="publications" class="pt-5">
             <h2 class="text-center">Publications</h2>
             <hr />
             <!-- Start of Publication -->
             <div class="row">
+                <div class="col-1">
+                    <h5>[C3]</h5>
+                </div>
+                <div class="col-11">
+                    <p>Pavlos Sermpezis, et al.
+                        <strong>"Unbiasing Internet Measurement Platforms"</strong>, 
+                        under submission, 2022.
+                </div>
+                <div class="col-1">
+                    <h5>[C2]</h5>
+                </div>
+                <div class="col-11">
+                    <p>Dimitrios P. Giakatos, Sofia Kostoglou, Pavlos Sermpezis, Athena Vakali
+                        <strong>"Benchmarking Graph Neural Networks for Internet Routing Data"</strong>, 
+                        in <u>ACM CoNEXT - GNNet workshop</u>, 2022.
+                        <br /><a href="https://arxiv.org/abs/2210.14189" target="_blank">[<i class="far fa-file-pdf"></i> PDF]</a>  
+                        <a href="https://github.com/dpgiakatos/gnn-internet-data" target="_blank">[ <i class="fab fa-github"></i> Code ]</a></p>
+                </div>
                 <div class="col-1">
                     <h5>[C1]</h5>
                 </div>
@@ -154,17 +319,19 @@
             <div class="row">
                 <div class="col-12 col-lg-7">
                     <ul class="people">
-                        <li><h6>Principal Investigator</h6><i class="fas fa-user-circle"></i> <strong><a href="https://sermpezis.gtihub.io">Pavlos Sermpezis</a></strong>, Datalab, AUTh</li>
+                        <li><h6>Principal Investigator</h6><i class="fas fa-user-circle"></i> <strong><a href="https://sermpezis.github.io">Pavlos Sermpezis</a></strong>, Datalab, AUTh</li>
                         <li><h6 class="pt-4">Research Assistants</h6>
-                            <strong><i class="fas fa-user-circle"></i> Stelios Mantzouranis</strong>, Datalab, AUTh<br />
-                            <strong><i class="fas fa-user-circle"></i> Christos Georgitsis</strong>, Datalab, AUTh
+                            <strong><i class="fas fa-user-circle"></i><a href="https://www.linkedin.com/in/sofia-kostoglou-b621a9218/"> Sofia Kostoglou</a></strong>, Datalab, AUTh
+                            <br />
+                            <strong><i class="fas fa-user-circle"></i><a href="https://smantzou.github.io/"> Stelios Mantzouranis</a></strong>, Datalab, AUTh</br>
+                            <strong><i class="fas fa-user-circle"></i><a href="https://www.linkedin.com/in/christos-georgitsis-53172a17b/"> Christos Georgitsis</a></strong>, Datalab, AUTh
                         </li>
                         <li><h6 class="pt-4">Researchers / External Collaborators</h6>
-                            <strong><i class="fas fa-user-circle"></i> Emile Aben</strong>, RIPE NCC<br />
-                            <strong><i class="fas fa-user-circle"></i> Lars Prehn</strong>, Max Planck Institute
+                            <strong><i class="fas fa-user-circle"></i><a href="https://labs.ripe.net/author/emileaben/"> Emile Aben</a></strong>, RIPE NCC<br />
+                            <strong><i class="fas fa-user-circle"></i><a href="https://whoislars.fyi/"> Lars Prehn</a></strong>, Max Planck Institute
                         </li>
-                        <li><h6 class="pt-4">Web Developer</h6><strong><i class="fas fa-user-circle"></i> Stelios Karamanidis</strong>, Datalab, AUTh</li>
-                        <li><h6 class="pt-4">Scientific Advisor</h6><strong><i class="fas fa-user-circle"></i> Athena Vakali</strong>, Datalab, AUTh</li>
+                        <li><h6 class="pt-4">Web Developer</h6><strong><i class="fas fa-user-circle"></i> <a href="https://www.linkedin.com/in/stelios-karamanidis/">Stelios Karamanidis</a></strong>, Datalab, AUTh</li>
+                        <li><h6 class="pt-4">Advisor</h6><strong><i class="fas fa-user-circle"></i><a href="https://datalab.csd.auth.gr/avakali/"> Athena Vakali</a></strong>, Datalab, AUTh</li>
                     </ul>
                 </div>
                 <div class="d-none d-lg-block col-lg-5 people-logos">
@@ -215,7 +382,9 @@
             <hr />
             <div class="row">
                 <div class="col">
-                    <p>Contact us at: sermpezis [at] csd [dot] auth [dot] gr  (Pavlos Sermpezis) </p>
+                    <p><i class="far fa-envelope"></i> sermpezis@csd.auth.gr  (Pavlos Sermpezis) </p>
+                    <p><i class="fab fa-twitter-square"></i> <a href="https://twitter.com/PavlosSermpezis">@PavlosSermpezis</a></p>
+                    <p><i class="fab fa-twitter-square"></i> <a href="https://twitter.com/datalab_auth">@datalab_auth</a></p>
                 </div>
             </div>
         </section>

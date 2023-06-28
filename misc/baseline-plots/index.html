@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Put name of student and diploma title here-->
+    <title>Test iframes</title>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- load google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <!-- load font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- load custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FPXF8D8BZ"></script>
+    <script src="https://kit.fontawesome.com/e70d3c92bf.js" crossorigin="anonymous"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8FPXF8D8BZ');
+    </script>
+</head>
+<body>
+    <h1> Employment rates in EU over time - baseline plots </h1>
+
+
+    <div class="jumbotron container px-5">
+        <p>This page provides <i>visualizations</i> for several (un)employment rates in European countries over time, both at the country and regional (NUTS) levels. The data are also presented in <i>searchable tables</i>, and can be <i>downloaded as csv files</i>.</p>
+
+        <p>Visualization & Options: The graphs below show how the value of the selected rate, e.g., unemployment, (y-axis) changes over time (x-time). All values are percentages, e.g., a value of 80 at the y-axis means 80%.
+         <ul style="list-style: disc;">
+          <li>Different lines correspond to different countries or regions (hovering the mouse over a line shows the country/region name). One or more countries/regions can be selected.</li>
+          <li>By default, the values are normalized with respect to a value of a reference year. For example, if 2008 is selected as the reference year, and the employment rates at 2008 and 2009 are 50% and 40%, respectively, then the normalized value appearing in the graph for 2009 will be 40/50 = 0.8 = 80%. Different reference years can be selected, or normalization can be deselected.</li>
+        </ul> 
+        </p>
+    </div>
+
+    
+
+    
+
+     <h2>Country-level visualizations</h1>
+     
+     <iframe id="iframe-countries" width="100%" height="1470" frameborder="0"
+        src="https://observablehq.com/embed/@pavlos/reslab-baseline-plots-normalized@1567?cells=viewof+select_variable_countries%2Cviewof+norm_flag_countries%2Cviewof+ref_year_countries%2Cviewof+easy_select_countries%2Cviewof+checkboxes_countries_countries%2Cplot_countries%2Ctable_title_countries%2Cviewof+searched_data%2Cviewof+table%2Ctable_text_countries%2Cbutton_table_countries%2Cviewof+table1%2Cbutton_table1_countries"></iframe>
+
+     <h2>NUTS-level visualizations</h1>
+     <iframe id="iframe-nuts" width="100%" height="1749" frameborder="0"
+        src="https://observablehq.com/embed/@pavlos/reslab-baseline-plots-normalized@1567?cells=viewof+select_variable_nuts%2Cviewof+norm_flag_nuts%2Cviewof+ref_year_nuts%2Cviewof+easy_select_nuts%2Cviewof+checkboxes_countries_nuts%2Cviewof+checkboxes_nuts%2Cplot_nuts%2Ctable_title_nuts%2Cviewof+searched_data_nuts%2Cviewof+table_nuts%2Ctable_text_nuts%2Cbutton_table_nuts%2Cviewof+table_nuts1%2Cbutton_table_nuts1"></iframe>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
